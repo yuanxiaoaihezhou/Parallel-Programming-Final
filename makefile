@@ -5,12 +5,12 @@ NVCC = nvcc
 # -O3 开启最高级别优化
 # -mavx2 明确告诉编译器使用AVX2指令集
 # -fopenmp 开启OpenMP支持
-CXXFLAGS = -O3 -mavx2 -fopenmp -std=c++17
+CXXFLAGS = -mavx2 -mfma -fopenmp -std=c++17
 # CUDA编译标志
 # -O3 优化
 # -arch=sm_86 针对RTX 3090 (Ampere架构) 进行编译
 # --ptxas-options=-v 显示寄存器使用等详细信息
-NVCCFLAGS = -O3 -arch=sm_86 --ptxas-options=-v
+NVCCFLAGS = -arch=sm_86 --ptxas-options=-v
 # 链接库
 LDFLAGS = -fopenmp
 LDLIBS = -lcudart
