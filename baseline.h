@@ -3,12 +3,14 @@
 
 #include <vector>
 #include <iostream>
+#include <cmath> 
+#include <cstdlib> 
 
 // 为了方便，我们定义一个矩阵类型
 using matrix = std::vector<std::vector<float>>;
 
 // 初始化矩阵 (随机值)
-void init_matrix(matrix& m, int size) {
+inline void init_matrix(matrix& m, int size) {
     m.assign(size, std::vector<float>(size + 1, 0));
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size + 1; ++j) {
@@ -18,7 +20,7 @@ void init_matrix(matrix& m, int size) {
 }
 
 // 打印矩阵 (用于调试)
-void print_matrix(const matrix& m) {
+inline void print_matrix(const matrix& m) {
     for (const auto& row : m) {
         for (float val : row) {
             std::cout << val << " ";
@@ -28,7 +30,7 @@ void print_matrix(const matrix& m) {
 }
 
 // 基准高斯消去算法
-void gaussian_elimination_baseline(matrix& m) {
+inline void gaussian_elimination_baseline(matrix& m) {
     int n = m.size();
     for (int i = 0; i < n; ++i) {
         // 寻找主元

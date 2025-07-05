@@ -5,7 +5,7 @@
 #include <immintrin.h> // For AVX
 
 // SIMD (AVX) 优化的高斯消去
-void gaussian_elimination_simd(matrix& m) {
+inline void gaussian_elimination_simd(matrix& m) {
     int n = m.size();
     for (int i = 0; i < n; ++i) {
         int max_row = i;

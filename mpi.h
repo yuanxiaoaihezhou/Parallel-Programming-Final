@@ -7,7 +7,7 @@
 #include <mpi.h>
 
 // SIMD + OpenMP + MPI
-void gaussian_elimination_mpi(matrix& m, int rank, int world_size) {
+inline void gaussian_elimination_mpi(matrix& m, int rank, int world_size) {
     int n = m.size();
 
     for (int i = 0; i < n; ++i) {

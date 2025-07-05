@@ -6,7 +6,7 @@
 #include <omp.h>
 
 // SIMD + OpenMP (static schedule)
-void gaussian_elimination_omp_static(matrix& m) {
+inline void gaussian_elimination_omp_static(matrix& m) {
     int n = m.size();
     for (int i = 0; i < n; ++i) {
         int max_row = i;
@@ -43,7 +43,7 @@ void gaussian_elimination_omp_static(matrix& m) {
 }
 
 // SIMD + OpenMP (dynamic schedule)
-void gaussian_elimination_omp_dynamic(matrix& m) {
+inline void gaussian_elimination_omp_dynamic(matrix& m) {
     int n = m.size();
     for (int i = 0; i < n; ++i) {
         int max_row = i;
